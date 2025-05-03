@@ -11,3 +11,4 @@ DogApp es una aplicación móvil desarrollada en **Kotlin** con **Android Studio
 
 ## 📂 Estructura del Proyecto
 -- de esta manera quedamos iniciados.
+-- pendiente
