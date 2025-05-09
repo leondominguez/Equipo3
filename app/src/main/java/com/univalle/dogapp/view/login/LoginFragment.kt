@@ -9,6 +9,7 @@ import com.airbnb.lottie.LottieAnimationView
 import com.univalle.dogapp.R
 import com.univalle.dogapp.databinding.FragmentLoginBinding
 import com.univalle.dogapp.viewmodel.LoginViewModel
+import androidx.navigation.fragment.findNavController
 
 class LoginFragment : Fragment(R.layout.fragment_login) {
 
@@ -46,7 +47,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
 
     private fun navigateToHome() {
         Toast.makeText(requireContext(), "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show()
-        // Aquí puedes agregar la lógica para navegar al HomeFragment
+        findNavController().navigate(R.id.action_loginFragment_to_homeAdminCitasFragment2)
     }
 
     override fun onDestroyView() {

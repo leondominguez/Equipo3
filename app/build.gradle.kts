@@ -80,6 +80,8 @@ dependencies {
     //materials
     implementation(libs.androidx.material3)
     implementation(libs.material)
+    implementation(libs.androidx.recyclerview)
+    implementation(libs.material.v1120)
 
 
 

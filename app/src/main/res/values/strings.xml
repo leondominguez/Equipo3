@@ -20,4 +20,6 @@
     <string name="guardarCita">Guardar Cita</string>
     <string name="imagen_de_un_perro">imagen de un perro</string>
     <string name="dogapp">DogApp</string>
+    <string name="administrador_n_de_citas">Administrador \n de citas</string>
+    <string name="button">Button</string>
 </resources>
