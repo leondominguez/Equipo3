@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.univalle.dogapp.view.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login"
+
+        >
+        <action
+            android:id="@+id/action_loginFragment_to_homeAdminCitasFragment2"
+            app:destination="@id/homeAdminCitasFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeAdminCitasFragment2"
+        android:name="com.univalle.dogapp.view.home.HomeAdminCitasFragment"
+        android:label="fragment_home_admin_citas"
+        tools:layout="@layout/fragment_home_admin_citas" />
+
+
+</navigation>
