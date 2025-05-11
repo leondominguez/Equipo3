@@ -1,41 +1,33 @@
 package com.univalle.dogapp.viewmodel
 
+
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.univalle.dogapp.database.CitaDatabase
+import com.univalle.dogapp.model.Cita
+import kotlinx.coroutines.launch
 
-data class Cita(val id: Int, val nombreMascota: String, val descripcion: String, val turno: String)
-
-class HomeAdminCitasViewModel : ViewModel() {
-    private val _citas = MutableLiveData<List<Cita>>()
-    val citas: LiveData<List<Cita>> get() = _citas
-
-    init {
-        _citas.value = listOf(
-            Cita(1, "Cory", "Fractura extremidad", "Turno #1"),
-            Cita(2, "Gus", "Vacunación", "Turno #2"),
-            Cita(3, "Rocky", "Consulta general", "Turno #3")
-        )
-    }
+class HomeAdminCitasViewModel(application: Application) : AndroidViewModel(application) {
+    private val citaDao = CitaDatabase.getDatabase(application).citaDao()
+    val citas: LiveData<List<Cita>> = citaDao.getAllCitas()
 
     fun agregarCita(cita: Cita) {
-        val listaActual = _citas.value?.toMutableList() ?: mutableListOf()
-        listaActual.add(cita)
-        _citas.value = listaActual
-    }
-
-    fun editarCita(citaEditada: Cita) {
-        val listaActual = _citas.value?.toMutableList() ?: mutableListOf()
-        val index = listaActual.indexOfFirst { it.id == citaEditada.id }
-        if (index != -1) {
-            listaActual[index] = citaEditada
-            _citas.value = listaActual
+        viewModelScope.launch {
+            citaDao.insertCita(cita)
         }
     }
 
-    fun eliminarCita(id: Int) {
-        val listaActual = _citas.value?.toMutableList() ?: mutableListOf()
-        listaActual.removeAll { it.id == id }
-        _citas.value = listaActual
+    fun editarCita(citaEditada: Cita) {
+        viewModelScope.launch {
+            citaDao.updateCita(citaEditada)
+        }
+    }
+
+    fun eliminarCita(cita: Cita) {
+        viewModelScope.launch {
+            citaDao.deleteCita(cita)
+        }
     }
 }
