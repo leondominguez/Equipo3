@@ -1,7 +1,7 @@
 package com.univalle.dogapp.view.home
 
 import android.os.Bundle
-import android.util.Log
+import androidx.activity.OnBackPressedCallback
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,6 +32,13 @@ class HomeAdminCitasFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Interceptar el botón "volver" del sistema
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                requireActivity().finish() // Cierra la actividad y regresa al escritorio
+            }
+        })
+
         adapter = CitasAdapter()
         binding.recyclerViewCitas.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerViewCitas.adapter = adapter
@@ -42,11 +49,6 @@ class HomeAdminCitasFragment : Fragment() {
         }
         binding.btnNuevaCita.setOnClickListener {
             findNavController().navigate(R.id.action_homeAdminCitasFragment2_to_nuevaCitaFragment)
-        }
-
-        viewModel.citas.observe(viewLifecycleOwner) { citas ->
-            Log.d("HomeAdminCitasFragment", "Citas en la base de datos: $citas")
-            adapter.submitList(citas)
         }
     }
 

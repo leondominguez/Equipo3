@@ -35,6 +35,8 @@ android {
     }
     kotlinOptions {
         jvmTarget = "11"
+        jvmTarget = "11"
+        freeCompilerArgs += listOf("-Xlint:deprecation")
     }
     buildFeatures {
         compose = true
@@ -73,6 +75,7 @@ dependencies {
     //Navigation Component (para usar Fragmentos y navegación)
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.androidx.activity.ktx)
 
     //Lifecycle ViewModel (para MVVM)
 
@@ -101,6 +104,8 @@ dependencies {
     ksp(libs.androidx.room.compiler.v252)
     implementation(libs.glide)
     kapt(libs.compiler)
+    implementation(libs.androidx.room.runtime)
+    ksp(libs.androidx.room.compiler)
 
 
 
