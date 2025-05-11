@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     id("kotlin-kapt")
+    id("com.google.devtools.ksp") version "2.0.21-1.0.27"
 }
 
 android {
@@ -40,6 +41,11 @@ android {
         dataBinding = true
         viewBinding = true
     }
+    ksp {
+        arg("room.schemaLocation", "$projectDir/src/main/schemas")
+        arg("room.incremental", "true")
+        arg("room.expandProjection", "true")
+    }
 }
 
 dependencies {
@@ -64,24 +70,37 @@ dependencies {
 
 
 
-// Navigation Component (para usar Fragmentos y navegación)
+    //Navigation Component (para usar Fragmentos y navegación)
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
 
-// Lifecycle ViewModel (para MVVM)
+    //Lifecycle ViewModel (para MVVM)
 
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.livedata.ktx)
-// biometria
+    //biometria
     implementation(libs.androidx.biometric)
     implementation(libs.androidx.biometric.v120alpha05)
-//animation
+    
+    //animation
     implementation(libs.lottie)
+    
     //materials
     implementation(libs.androidx.material3)
     implementation(libs.material)
     implementation(libs.androidx.recyclerview)
     implementation(libs.material.v1120)
+
+    //retrofit
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    
+    //database Room
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.runtime.v252)
+    ksp(libs.androidx.room.compiler.v252)
+    implementation(libs.glide)
+    kapt(libs.compiler)
 
 
 

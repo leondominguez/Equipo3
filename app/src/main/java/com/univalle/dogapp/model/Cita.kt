@@ -1,0 +1,15 @@
+package com.univalle.dogapp.model
+
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "citas")
+data class Cita(
+    @PrimaryKey(autoGenerate = true) val id: Int = 0,
+    val mascota: String,
+    val raza: String,
+    val propietario: String,
+    val telefono: String,
+    val sintoma: String,
+    val imagen: String = ""
+)

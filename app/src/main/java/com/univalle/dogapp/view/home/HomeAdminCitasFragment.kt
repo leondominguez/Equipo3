@@ -1,17 +1,18 @@
 package com.univalle.dogapp.view.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.univalle.dogapp.R
 import com.univalle.dogapp.databinding.FragmentHomeAdminCitasBinding
 import com.univalle.dogapp.viewmodel.HomeAdminCitasViewModel
-import com.univalle.dogapp.viewmodel.Cita
 import com.univalle.dogapp.utils.SpacingItemDecoration
-
 
 class HomeAdminCitasFragment : Fragment() {
 
@@ -19,7 +20,6 @@ class HomeAdminCitasFragment : Fragment() {
     private val binding get() = _binding!!
     private val viewModel: HomeAdminCitasViewModel by viewModels()
     private lateinit var adapter: CitasAdapter
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,12 +40,16 @@ class HomeAdminCitasFragment : Fragment() {
         viewModel.citas.observe(viewLifecycleOwner) { citas ->
             adapter.submitList(citas)
         }
-
         binding.btnNuevaCita.setOnClickListener {
-            val nuevaCita = Cita(4, "Nueva Mascota", "Nueva descripción", "Turno #4")
-            viewModel.agregarCita(nuevaCita)
+            findNavController().navigate(R.id.action_homeAdminCitasFragment2_to_nuevaCitaFragment)
+        }
+
+        viewModel.citas.observe(viewLifecycleOwner) { citas ->
+            Log.d("HomeAdminCitasFragment", "Citas en la base de datos: $citas")
+            adapter.submitList(citas)
         }
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
