@@ -22,4 +22,12 @@
     <string name="dogapp">DogApp</string>
     <string name="administrador_n_de_citas">Administrador \n de citas</string>
     <string name="button">Button</string>
+    <string name="fractura_extremidad">Fractura extremidad</string>
+    <string name="_1">#1</string>
+    <string name="cory">Cory</string>
+    <string name="volver">Volver</string>
+    <string name="nueva_cita">Nueva Cita</string>
+    <string name="home_admin_citas_fragment">Home Admin Citas Fragment</string>
+    <string name="selecciona_una_raza">Selecciona una raza</string>
+    <string name="toolbar_dinamic" >Toolbar Dinamica</string>>
 </resources>

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="imagen_de_un_perro">imagen de un perro</string>
+    <string name="home_admin_citas_fragment">Home Admin Citas Fragment</string>
 </resources>

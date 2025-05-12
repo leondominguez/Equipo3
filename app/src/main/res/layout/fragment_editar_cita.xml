@@ -1,0 +1,130 @@
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".view.detail.EditarCitaFragment">
+
+        <!-- Toolbar personalizada -->
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"
+            android:background="@drawable/toolbar_background"
+            app:title="Editar Cita"
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:navigationIconTint="@color/pink" />
+
+        <!-- Campo Nombre de la Mascota -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/et_mascota"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre de la Mascota"
+            android:layout_marginTop="50dp"
+            android:layout_marginHorizontal="16dp"
+            app:boxStrokeColor="@color/purple_500"
+            app:boxStrokeWidthFocused="2dp"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/iet_mascota"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLength="15"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Campo Raza -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/et_raza"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/raza"
+            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="16dp"
+            app:boxStrokeColor="@color/purple_500"
+            app:boxStrokeWidthFocused="2dp"
+            app:layout_constraintTop_toBottomOf="@id/et_mascota"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <AutoCompleteTextView
+                android:id="@+id/iet_raza"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:paddingHorizontal="15dp"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Campo Nombre del Propietario -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/et_propietario"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre del Propietario"
+            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="16dp"
+            app:boxStrokeColor="@color/purple_500"
+            app:boxStrokeWidthFocused="2dp"
+            app:layout_constraintTop_toBottomOf="@id/et_raza"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/iet_propietario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLength="30"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Campo Teléfono -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/et_telefono"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Teléfono"
+            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="16dp"
+            app:boxStrokeColor="@color/purple_500"
+            app:boxStrokeWidthFocused="2dp"
+            app:layout_constraintTop_toBottomOf="@id/et_propietario"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/iet_telefono"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLength="10"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Botón Editar Cita -->
+        <Button
+            android:id="@+id/btn_editarCita"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginHorizontal="16dp"
+            android:backgroundTint="@color/pink"
+            android:drawableLeft="@drawable/ic_pencil"
+            android:enabled="false"
+            android:text="Editar Cita"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/et_telefono"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
