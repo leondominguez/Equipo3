@@ -9,5 +9,6 @@
         <item name="colorSecondary">@color/purple_500</item>
         <item name="android:windowBackground">@color/gray</item>
         <item name="android:statusBarColor">@color/purple_500</item>
+        <!-- No pongas aquí los atributos de splash screen si tu minSdk es menor a 31 -->
     </style>
 </resources>
