@@ -35,14 +35,18 @@ class HomeAdminCitasFragment : Fragment() {
         // Interceptar el botón "volver" del sistema
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                requireActivity().finish() // Cierra la actividad y regresa al escritorio
+                requireActivity().finish()
             }
         })
 
-        adapter = CitasAdapter()
+        // Aquí pasas el callback de navegación al adaptador
+        adapter = CitasAdapter { cita ->
+            val action = HomeAdminCitasFragmentDirections.actionHomeAdminCitasFragment2ToDetalleCitaFragment(cita.id)
+            findNavController().navigate(action)
+        }
         binding.recyclerViewCitas.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerViewCitas.adapter = adapter
-        binding.recyclerViewCitas.addItemDecoration(SpacingItemDecoration(16)) // Espaciado de 16dp
+        binding.recyclerViewCitas.addItemDecoration(SpacingItemDecoration(16))
 
         viewModel.citas.observe(viewLifecycleOwner) { citas ->
             adapter.submitList(citas)
@@ -51,7 +55,6 @@ class HomeAdminCitasFragment : Fragment() {
             findNavController().navigate(R.id.action_homeAdminCitasFragment2_to_nuevaCitaFragment)
         }
     }
-
 
     override fun onDestroyView() {
         super.onDestroyView()

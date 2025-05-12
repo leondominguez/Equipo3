@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.ArrayAdapter
+import android.widget.TextView
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
@@ -17,6 +18,8 @@ import com.univalle.dogapp.R
 import com.univalle.dogapp.databinding.FragmentNuevaCitaBinding
 import com.univalle.dogapp.model.Cita
 import com.univalle.dogapp.viewmodel.NuevaCitaViewModel
+import android.graphics.Typeface
+import androidx.core.content.ContextCompat
 
 class NuevaCitaFragment : Fragment() {
 
@@ -38,7 +41,7 @@ class NuevaCitaFragment : Fragment() {
         binding.toolbar.btnVolver.setOnClickListener {
             findNavController().navigate(R.id.action_nuevaCitaFragment_to_homeAdminCitasFragment2)
         }
-
+        binding.toolbar.root.findViewById<TextView>(R.id.toolbar_title).text = "Nueva Cita"
         viewModel.fetchDogBreeds()
 
         viewModel.listaRazas.observe(viewLifecycleOwner) { lista ->
@@ -58,10 +61,22 @@ class NuevaCitaFragment : Fragment() {
         sintomasAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.spinnerSintomas.adapter = sintomasAdapter
 
+        //Cambios para el boton dinamico
         val fields = listOf(binding.ietMascota, binding.ietRaza, binding.ietPropietario, binding.ietTelefono)
         fields.forEach { field ->
             field.addTextChangedListener {
-                binding.btnGuardar.isEnabled = fields.all { it.text.toString().trim().isNotEmpty() }
+                val allFieldsFilled = fields.all { it.text.toString().trim().isNotEmpty() }
+
+                binding.btnGuardar.isEnabled = allFieldsFilled
+
+                if (allFieldsFilled) {
+                    binding.btnGuardar.setTextColor(ContextCompat.getColor(requireContext(), android.R.color.white))
+                    binding.btnGuardar.typeface = Typeface.DEFAULT_BOLD
+                } else {
+                    val disabledColor = ContextCompat.getColor(requireContext(), R.color.gray_disabled)
+                    binding.btnGuardar.setTextColor(disabledColor)
+                    binding.btnGuardar.typeface = Typeface.DEFAULT
+                }
             }
         }
 
