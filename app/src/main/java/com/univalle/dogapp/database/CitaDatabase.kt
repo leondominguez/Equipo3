@@ -8,6 +8,7 @@ import androidx.room.RoomDatabase
 import com.univalle.dogapp.model.Cita
 import java.util.concurrent.Executors
 
+
 @Database(entities = [Cita::class], version = 1, exportSchema = true)
 abstract class CitaDatabase : RoomDatabase() {
     abstract fun citaDao(): CitaDao

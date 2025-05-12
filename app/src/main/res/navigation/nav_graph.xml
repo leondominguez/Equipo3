@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/loginFragment"
-    >
+    app:startDestination="@id/loginFragment">
 
     <fragment
         android:id="@+id/loginFragment"
@@ -20,22 +19,52 @@
         android:id="@+id/homeAdminCitasFragment2"
         android:name="com.univalle.dogapp.view.home.HomeAdminCitasFragment"
         android:label="fragment_home_admin_citas"
-        tools:layout="@layout/fragment_home_admin_citas" >
+        tools:layout="@layout/fragment_home_admin_citas">
         <action
             android:id="@+id/action_homeAdminCitasFragment2_to_nuevaCitaFragment"
             app:destination="@id/nuevaCitaFragment" />
+        <action
+            android:id="@+id/action_homeAdminCitasFragment2_to_detalleCitaFragment"
+            app:destination="@id/detalleCitaFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/nuevaCitaFragment"
         android:name="com.univalle.dogapp.view.create.NuevaCitaFragment"
         android:label="NuevaCitaFragment"
-        tools:layout="@layout/fragment_nueva_cita"
-        >
+        tools:layout="@layout/fragment_nueva_cita">
         <action
             android:id="@+id/action_nuevaCitaFragment_to_homeAdminCitasFragment2"
             app:destination="@id/homeAdminCitasFragment2" />
     </fragment>
 
+    <fragment
+        android:id="@+id/detalleCitaFragment"
+        android:name="com.univalle.dogapp.view.detail.DetalleCitaFragment"
+        android:label="DetalleCitaFragment"
+        tools:layout="@layout/fragment_detalle_cita">
+        <argument
+            android:name="citaId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_detalleCitaFragment_to_editarCitaFragment"
+            app:destination="@id/editarCitaFragment" />
+        <action
+            android:id="@+id/action_detalleCitaFragment_to_homeAdminCitasFragment2"
+            app:destination="@id/homeAdminCitasFragment2" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/editarCitaFragment"
+        android:name="com.univalle.dogapp.view.detail.EditarCitaFragment"
+        android:label="EditarCitaFragment"
+        tools:layout="@layout/fragment_editar_cita">
+        <argument
+            android:name="citaId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_editarCitaFragment_to_homeAdminCitasFragment2"
+            app:destination="@id/homeAdminCitasFragment2" />
+    </fragment>
 
 </navigation>

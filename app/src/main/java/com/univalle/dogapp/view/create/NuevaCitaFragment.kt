@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.ArrayAdapter
+import android.widget.TextView
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
@@ -38,7 +39,7 @@ class NuevaCitaFragment : Fragment() {
         binding.toolbar.btnVolver.setOnClickListener {
             findNavController().navigate(R.id.action_nuevaCitaFragment_to_homeAdminCitasFragment2)
         }
-
+        binding.toolbar.root.findViewById<TextView>(R.id.toolbar_title).text = "Nueva Cita"
         viewModel.fetchDogBreeds()
 
         viewModel.listaRazas.observe(viewLifecycleOwner) { lista ->
