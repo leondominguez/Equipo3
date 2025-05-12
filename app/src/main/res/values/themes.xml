@@ -12,10 +12,4 @@
         <item name="android:statusBarColor">@color/purple_500</item>
     </style>
 
-    <style name="Theme.DogApp" parent="Base.Theme.DogApp">
-        <!-- SplashScreen para Android 12+ -->
-        <item name="android:windowSplashScreenBackground">@color/black</item>
-        <item name="android:windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item>
-        <item name="android:windowSplashScreenIconBackgroundColor">@color/rose</item>
-    </style>
 </resources>
