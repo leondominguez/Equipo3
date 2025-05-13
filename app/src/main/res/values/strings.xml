@@ -29,5 +29,7 @@
     <string name="nueva_cita">Nueva Cita</string>
     <string name="home_admin_citas_fragment">Home Admin Citas Fragment</string>
     <string name="selecciona_una_raza">Selecciona una raza</string>
-    <string name="toolbar_dinamic" >Toolbar Dinamica</string>>
+    <string name="toolbar_dinamic" >Toolbar Dinamica</string>
+    <string name="imagen_de_la_mascota">Imagen de la mascota</string>
+    <string name="telefonoPropietario">Teléfono</string>
 </resources>
