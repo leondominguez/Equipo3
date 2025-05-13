@@ -12,4 +12,15 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+    <style name="WhiteAlertDialog" parent="Theme.Material3.DayNight.Dialog.Alert">
+        <item name="android:background">@color/white</item>
+        <item name="android:textColorPrimary">@color/gray</item> <!-- Color del texto principal -->
+        <item name="android:textColor">@color/gray</item> <!-- Color del mensaje -->
+        <item name="android:buttonBarPositiveButtonStyle">@style/AlertDialogButton</item>
+        <item name="android:buttonBarNegativeButtonStyle">@style/AlertDialogButton</item>
+    </style>
+
+    <style name="AlertDialogButton" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">@color/purple_500</item>
+    </style>
 </resources>

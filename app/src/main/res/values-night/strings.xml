@@ -1,5 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">DogApp</string>
+    <string name="edit_fragment_name">Editar Cita</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string-array name="sintomas">
+        <item>Síntomas</item>
+        <item>Solo duerme</item>
+        <item>No come</item>
+        <item>Fractura extremidad</item>
+        <item>Tiene pulgas</item>
+        <item>Tiene garrapatas</item>
+        <item>Bota demasiado pelo</item>
+    </string-array>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="TitleEditarCita">Editar Cita</string>
+    <string name="nombreMascota">Nombre de la mascota</string>
+    <string name="raza">Raza</string>
+    <string name="propietario">Nombre del propietario</string>
+    <string name="telefono">Teléfono</string>
+    <string name="guardarCita">Guardar Cita</string>
     <string name="imagen_de_un_perro">imagen de un perro</string>
+    <string name="dogapp">DogApp</string>
+    <string name="administrador_n_de_citas">Administrador \n de citas</string>
+    <string name="button">Button</string>
+    <string name="fractura_extremidad">Fractura extremidad</string>
+    <string name="_1">#1</string>
+    <string name="cory">Cory</string>
+    <string name="volver">Volver</string>
+    <string name="nueva_cita">Nueva Cita</string>
     <string name="home_admin_citas_fragment">Home Admin Citas Fragment</string>
+    <string name="selecciona_una_raza">Selecciona una raza</string>
+    <string name="toolbar_dinamic" >Toolbar Dinamica</string>
 </resources>
