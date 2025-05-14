@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -61,9 +63,16 @@ class DetalleCitaFragment : Fragment() {
 
                 // Botón de eliminar
                 binding.deleteButton.setOnClickListener {
-                    viewModel.eliminarCita(cita) {
-                        findNavController().navigate(R.id.action_detalleCitaFragment_to_homeAdminCitasFragment2)
-                    }
+                    val dialog = AlertDialog.Builder(requireContext(), R.style.WhiteAlertDialog)
+                        .setTitle("Confirmar eliminación")
+                        .setMessage("¿Estás seguro de que deseas eliminar esta cita?")
+                        .setPositiveButton("Eliminar") { _, _ -> /* ... */ }
+                        .setNegativeButton("Cancelar", null)
+                        .show()
+
+                    dialog.getButton(AlertDialog.BUTTON_POSITIVE)?.setTextColor(ContextCompat.getColor(requireContext(), R.color.purple_700))
+                    dialog.getButton(AlertDialog.BUTTON_NEGATIVE)?.setTextColor(ContextCompat.getColor(requireContext(), R.color.purple_500))
+
                 }
 
                 // Botón de editar: pasar solo el id
