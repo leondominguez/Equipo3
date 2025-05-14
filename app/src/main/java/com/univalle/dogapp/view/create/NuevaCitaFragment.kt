@@ -18,8 +18,6 @@ import com.univalle.dogapp.R
 import com.univalle.dogapp.databinding.FragmentNuevaCitaBinding
 import com.univalle.dogapp.model.Cita
 import com.univalle.dogapp.viewmodel.NuevaCitaViewModel
-import android.graphics.Typeface
-import androidx.core.content.ContextCompat
 
 class NuevaCitaFragment : Fragment() {
 
@@ -61,22 +59,16 @@ class NuevaCitaFragment : Fragment() {
         sintomasAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.spinnerSintomas.adapter = sintomasAdapter
 
-        //Cambios para el boton dinamico
+        // Botón inicia deshabilitado y opaco
+        binding.btnGuardar.isEnabled = false
+        binding.btnGuardar.alpha = 0.5f
+
         val fields = listOf(binding.ietMascota, binding.ietRaza, binding.ietPropietario, binding.ietTelefono)
         fields.forEach { field ->
             field.addTextChangedListener {
                 val allFieldsFilled = fields.all { it.text.toString().trim().isNotEmpty() }
-
                 binding.btnGuardar.isEnabled = allFieldsFilled
-
-                if (allFieldsFilled) {
-                    binding.btnGuardar.setTextColor(ContextCompat.getColor(requireContext(), android.R.color.white))
-                    binding.btnGuardar.typeface = Typeface.DEFAULT_BOLD
-                } else {
-                    val disabledColor = ContextCompat.getColor(requireContext(), R.color.gray_disabled)
-                    binding.btnGuardar.setTextColor(disabledColor)
-                    binding.btnGuardar.typeface = Typeface.DEFAULT
-                }
+                binding.btnGuardar.alpha = if (allFieldsFilled) 1.0f else 0.5f
             }
         }
 
@@ -112,7 +104,6 @@ class NuevaCitaFragment : Fragment() {
             findNavController().navigate(R.id.action_nuevaCitaFragment_to_homeAdminCitasFragment2)
         }
     }
-
 
     override fun onDestroyView() {
         super.onDestroyView()
