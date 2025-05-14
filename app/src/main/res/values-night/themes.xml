@@ -7,9 +7,15 @@
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <item name="colorSecondary">@color/purple_500</item>
-        <item name="android:windowBackground">@color/gray</item>
+        <item name="android:windowBackground">@color/rose</item>
         <item name="android:statusBarColor">@color/purple_500</item>
-        <!-- No pongas aquí los atributos de splash screen si tu minSdk es menor a 31 -->
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="colorOnBackground">@color/black</item>
+        <item name="colorOnSurface">@color/black</item>
+
+
+        <!-- no poner cosas de splash screen aqui si el minSdk es menor a 31 es decir la api-->
     </style>
 
 </resources>
