@@ -72,7 +72,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="32dp"
                     android:layout_marginEnd="16dp"
-                    android:text="#: 3"
+                    android:text="@string/numeroDeCita"
                     android:textColor="@color/pink"
                     android:textSize="16sp"
                     android:textStyle="bold"
@@ -93,7 +93,7 @@
                         android:id="@+id/dog_breed"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Raza: Labrador"
+                        android:text="@string/raza"
                         android:textSize="24sp"
                         android:textStyle="bold" />
 
@@ -102,7 +102,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:text="Síntomas: Fatiga y pérdida de apetito"
+                        android:text="@string/sintomas"
                         android:textSize="19sp" />
                 </LinearLayout>
 
@@ -144,7 +144,7 @@
                         android:text="@string/telefonoPropietario"
                         android:textSize="15sp"
                         android:textStyle="normal"
-                        android:layout_marginLeft="10dp"/>
+                        android:layout_marginStart="10dp"/>
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
@@ -156,7 +156,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             app:tint="@color/gray"
-            android:contentDescription="Eliminar cita"
+            android:contentDescription="@string/eliminar_cita"
             android:src="@drawable/ic_trash_button"
             app:backgroundTint="@color/pink"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -168,7 +168,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:contentDescription="Editar cita"
+            android:contentDescription="@string/btn_editar"
             android:src="@drawable/ic_pencil"
             app:tint="@color/white"
             app:backgroundTint="@color/gray"
