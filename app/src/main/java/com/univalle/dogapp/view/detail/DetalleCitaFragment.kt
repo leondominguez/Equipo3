@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -66,7 +67,12 @@ class DetalleCitaFragment : Fragment() {
                     val dialog = AlertDialog.Builder(requireContext(), R.style.WhiteAlertDialog)
                         .setTitle("Confirmar eliminación")
                         .setMessage("¿Estás seguro de que deseas eliminar esta cita?")
-                        .setPositiveButton("Eliminar") { _, _ -> /* ... */ }
+                        .setPositiveButton("Eliminar") { _, _ ->
+                            viewModel.eliminarCita(cita) {
+                                findNavController().navigate(R.id.action_detalleCitaFragment_to_homeAdminCitasFragment2)
+                                Toast.makeText(requireContext(), "Se eliminó la cita #${cita.id}", Toast.LENGTH_SHORT).show()
+                            }
+                        }
                         .setNegativeButton("Cancelar", null)
                         .show()
 
