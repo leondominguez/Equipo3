@@ -19,8 +19,11 @@
         <item name="android:buttonBarPositiveButtonStyle">@style/AlertDialogButton</item>
         <item name="android:buttonBarNegativeButtonStyle">@style/AlertDialogButton</item>
     </style>
-
     <style name="AlertDialogButton" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
         <item name="android:textColor">@color/purple_500</item>
+    </style>
+    <style name="DropdownMenu" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="android:popupBackground">@color/white</item>
+        <item name="android:textColor">@color/black</item>
     </style>
 </resources>
