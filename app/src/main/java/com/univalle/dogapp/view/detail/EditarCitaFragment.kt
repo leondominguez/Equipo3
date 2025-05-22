@@ -42,7 +42,7 @@ class EditarCitaFragment : Fragment() {
             findNavController().navigateUp()
         }
         binding.toolbar.root.findViewById<TextView>(R.id.toolbar_title).text =
-            getString(R.string.editar_cita)
+            getString(R.string.btn_editar_cita)
 
         // Obtener razas y configurar autocompletado dinámico
         viewModel.fetchDogBreeds()
