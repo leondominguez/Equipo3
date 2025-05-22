@@ -41,7 +41,8 @@ class EditarCitaFragment : Fragment() {
         binding.toolbar.btnVolver.setOnClickListener {
             findNavController().navigateUp()
         }
-        binding.toolbar.root.findViewById<TextView>(R.id.toolbar_title).text = "Editar Cita"
+        binding.toolbar.root.findViewById<TextView>(R.id.toolbar_title).text =
+            getString(R.string.editar_cita)
 
         // Obtener razas y configurar autocompletado dinámico
         viewModel.fetchDogBreeds()
@@ -59,6 +60,8 @@ class EditarCitaFragment : Fragment() {
             binding.ietRaza.setAdapter(nuevoAdapter)
             if (filtro.isNotEmpty()) binding.ietRaza.showDropDown()
         }
+        binding.btnEditarCita.isEnabled=false
+        binding.btnEditarCita.alpha=0.5f
 
         // Cargar datos de la cita por id
         viewModel.getCitaById(args.citaId).observe(viewLifecycleOwner) { cita ->
@@ -68,13 +71,25 @@ class EditarCitaFragment : Fragment() {
                 binding.ietPropietario.setText(cita.propietario)
                 binding.ietTelefono.setText(cita.telefono)
 
-                // Validar campos y habilitar botón
-                val fields = listOf(binding.ietMascota, binding.ietRaza, binding.ietPropietario, binding.ietTelefono)
-                fun validarCampos() {
-                    binding.btnEditarCita.isEnabled = fields.all { it.text?.isNotEmpty() == true }
+
+                // Se guardan los valores originales en una variable, para luego comparar
+                val originalValues = mapOf(
+                    binding.ietMascota to binding.ietMascota.text.toString(),
+                    binding.ietRaza to binding.ietRaza.text.toString(),
+                    binding.ietPropietario to binding.ietPropietario.text.toString(),
+                    binding.ietTelefono to binding.ietTelefono.text.toString()
+                )
+                // Se guardan los valores originales en una lista
+                val fields = originalValues.keys.toList()
+                // Se recorre la lista y se comparan los valores cuando hay cambios en el campo con los valores originales
+                // si ocurre un cambio y no coincide se activa
+                fields.forEach { field ->
+                    field.addTextChangedListener {
+                        val hasChanged = fields.any { it.text.toString() != originalValues[it] }
+                        binding.btnEditarCita.isEnabled = hasChanged
+                        binding.btnEditarCita.alpha = if (hasChanged) 1.0f else 0.5f
+                    }
                 }
-                fields.forEach { it.addTextChangedListener { validarCampos() } }
-                validarCampos()
 
                 // Acción del botón Editar Cita
                 binding.btnEditarCita.setOnClickListener {
