@@ -46,6 +46,10 @@ La estructura del proyecto sigue una arquitectura MVVM (Model-View-ViewModel) pa
 <img src="app/src/main/assets/imagesMockups/login.jpeg" alt="imagen del login" width="200"/>
 <img src="app/src/main/assets/imagesMockups/login.jpeg" alt="imagen del login" width="200"/>
 </p>
+<p align="center">
+<img src="app/src/main/assets/imagesMockups/login.jpeg" alt="imagen del login" width="200"/>
+<img src="app/src/main/assets/imagesMockups/login.jpeg" alt="imagen del login" width="200"/>
+</p>
 
 ## 🚀 Instalación y Ejecución
 
