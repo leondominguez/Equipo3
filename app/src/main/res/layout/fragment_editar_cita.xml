@@ -119,7 +119,7 @@
             android:backgroundTint="@color/pink"
             android:drawableLeft="@drawable/ic_pencil"
             android:enabled="false"
-            android:textColor="@color/button_text_enable_disable_efecct"
+            android:textColor="@color/button_text_enable_disable_effect"
             android:alpha="0.5"
             android:text="Editar Cita"
             android:textStyle="bold"
