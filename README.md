@@ -43,10 +43,11 @@ La estructura del proyecto sigue una arquitectura MVVM (Model-View-ViewModel) pa
 
 ## 📸 Capturas de Pantalla
 
-_Agrega aquí capturas de pantalla de la app para mostrar la interfaz y funcionalidades principales._
+![Logo de la app]([https://example.com/logo.png](https://drive.google.com/file/d/1JYOnG2_0qvdtc9g7sJ1kcuzdSXKsNZav/view?usp=drive_link))
+
 
 ## 🚀 Instalación y Ejecución
 
 1. Clona este repositorio:
    ```sh
-   git clone https://github.com/tuusuario/DogApp.git
+   git clone https://github.com/leondominguez/Equipo3.git
