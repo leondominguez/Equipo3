@@ -8,7 +8,7 @@ import androidx.lifecycle.ViewModel
 import androidx.core.content.ContextCompat
 
 class LoginViewModel : ViewModel() {
-    val biometricAuthResult = MutableLiveData<Boolean>()
+    val biometricAuthResult = MutableLiveData<Boolean>() // se declara la variable para el resultado de la autenticación biométrica
     private lateinit var biometricPrompt: BiometricPrompt
 
     fun setupBiometricPrompt(context: Context, onAuthenticationSuccess: () -> Unit) {

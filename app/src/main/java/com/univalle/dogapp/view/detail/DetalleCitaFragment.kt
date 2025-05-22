@@ -68,9 +68,18 @@ class DetalleCitaFragment : Fragment() {
                         .setTitle("Confirmar eliminación")
                         .setMessage("¿Estás seguro de que deseas eliminar esta cita?")
                         .setPositiveButton("Eliminar") { _, _ ->
-                            viewModel.eliminarCita(cita) {
-                                findNavController().navigate(R.id.action_detalleCitaFragment_to_homeAdminCitasFragment2)
-                                Toast.makeText(requireContext(), "Se eliminó la cita #${cita.id}", Toast.LENGTH_SHORT).show()
+                            try {
+                                cita?.let {
+                                    viewModel.eliminarCita(it) {
+                                        Toast.makeText(requireContext(), "Cita eliminada", Toast.LENGTH_SHORT).show()
+                                        findNavController().navigate(R.id.action_detalleCitaFragment_to_homeAdminCitasFragment2)
+                                    }
+                                } ?: run {
+                                    Toast.makeText(requireContext(), "Cita no disponible", Toast.LENGTH_SHORT).show()
+                                }
+                            } catch (e: Exception) {
+                                Toast.makeText(requireContext(), "Error al eliminar la cita", Toast.LENGTH_SHORT).show()
+                                e.printStackTrace()
                             }
                         }
                         .setNegativeButton("Cancelar", null)
