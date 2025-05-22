@@ -36,4 +36,6 @@
     <string name="sintomas">Síntomas: Fatiga y pérdida de apetito</string>
     <string name="btn_editar">Boton Editar</string>
     <string name="btn_editar_cita">Editar Cita</string>
+    <string name="nombre_de_la_mascota">Nombre de la Mascota</string>
+    <string name="nombre_del_propietario">Nombre del Propietario</string>
 </resources>
