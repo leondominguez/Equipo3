@@ -42,7 +42,7 @@ La estructura del proyecto sigue una arquitectura MVVM (Model-View-ViewModel) pa
 - **Glide** para carga eficiente de imágenes.
 
 ## 📸 Capturas de Pantalla
-<img src="app/src/main/assets/imagesMockups/login.jpeg" alt="imagen del login" width="300"/>
+<img src="app/src/main/assets/imagesMockups/login.jpeg" alt="imagen del login" width="100"  height="300"/>
 
 ## 🚀 Instalación y Ejecución
 
