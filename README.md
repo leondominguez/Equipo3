@@ -43,7 +43,14 @@ La estructura del proyecto sigue una arquitectura MVVM (Model-View-ViewModel) pa
 
 ## 📸 Capturas de Pantalla
 
-![Logo de la app]([https://example.com/logo.png](https://drive.google.com/file/d/1JYOnG2_0qvdtc9g7sJ1kcuzdSXKsNZav/view?usp=drive_link))
+<p align="center">
+<img src="app/src/main/assets/imagesMockups/login.jpeg" alt="imagen del login" width="200"/>
+<img src="app/src/main/assets/imagesMockups/login.jpeg" alt="imagen del login" width="200"/>
+</p>
+<p align="center">
+<img src="app/src/main/assets/imagesMockups/login.jpeg" alt="imagen del login" width="200"/>
+<img src="app/src/main/assets/imagesMockups/login.jpeg" alt="imagen del login" width="200"/>
+</p>
 
 
 ## 🚀 Instalación y Ejecución
@@ -51,3 +58,4 @@ La estructura del proyecto sigue una arquitectura MVVM (Model-View-ViewModel) pa
 1. Clona este repositorio:
    ```sh
    git clone https://github.com/leondominguez/Equipo3.git
+
