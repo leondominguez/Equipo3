@@ -40,10 +40,19 @@ La estructura del proyecto sigue una arquitectura MVVM (Model-View-ViewModel) pa
     - androidx-room-runtime
     - androidx-room-runtime-v252
 - **Retrofit** para consumo de API REST.
+    - retrofit
+    - converter-gson
 - **Material 3** y **Lottie** para UI moderna.
+    - androidx-material3
+    - lottie
 - **Navigation Component** para navegación entre fragmentos.
+    - androidx-navigation-fragment-ktx
+    - androidx-navigation-ui-ktx
 - **BiometricPrompt** para autenticación biométrica.
+    - androidx-biometric
 - **Glide** para carga eficiente de imágenes.
+    - glide
+    - compiler
 
 ## 📸 Capturas de Pantalla
 
