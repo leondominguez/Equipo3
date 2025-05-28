@@ -34,12 +34,25 @@ La estructura del proyecto sigue una arquitectura MVVM (Model-View-ViewModel) pa
 ## 🛠️ Tecnologías y Librerías
 
 - **Kotlin** y **Java** (compatibilidad).
-- **Room** para persistencia local.
+- **Room** para persistencia local:
+    - androidx-room-compiler
+    - androidx-room-compiler-v252
+    - androidx-room-runtime
+    - androidx-room-runtime-v252
 - **Retrofit** para consumo de API REST.
+    - retrofit
+    - converter-gson
 - **Material 3** y **Lottie** para UI moderna.
+    - androidx-material3
+    - lottie
 - **Navigation Component** para navegación entre fragmentos.
+    - androidx-navigation-fragment-ktx
+    - androidx-navigation-ui-ktx
 - **BiometricPrompt** para autenticación biométrica.
+    - androidx-biometric
 - **Glide** para carga eficiente de imágenes.
+    - glide
+    - compiler
 
 ## 📸 Capturas de Pantalla
 
